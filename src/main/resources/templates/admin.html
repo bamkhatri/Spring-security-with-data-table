@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+	<link rel="stylesheet" type="text/css" 	href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
+	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/buttons/1.5.2/css/buttons.dataTables.min.css">
+</head>
+<body>
+<div style = "display:flex">
+	
+	<img src="/img/admin.JPG" style="width:10%;height:10%;">
+	<h1>Welcome Admin</h1>
+
+</div>
+
+<div>
+		
+		<table id="example" class="display" style="width: 100%">
+		<thead>
+			<tr>
+				
+				<th>ID</th>
+				<th>FULLNAME</th>
+				<th>ADDRESS</th>
+				<th>PHONE</th>
+		
+			</tr>
+		</thead>
+	</table>
+	
+	<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+	<script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js	"></script>
+	
+<script>
+	
+	$(document).ready(function() {
+	    $('#example').DataTable({
+	    	
+	    	ajax : {
+				url : '/getAll',
+				dataSrc : ''
+			},
+			columns : [
+				 
+					{
+						data : 'id'
+					},
+					{
+						
+						data:'name'
+					},
+																			
+					{
+						data : 'address'
+					},
+					{
+						data : 'phoneNumber'
+					}
+						
+					]
+
+	    });
+	} );
+
+
+</script>
+		
+
+</div>
+
+</body>
+</html>
